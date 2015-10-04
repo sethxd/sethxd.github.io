@@ -1,0 +1,13 @@
+# Site settings
+title: seth.blog
+email: seth.dehaan@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  This blog is a sandbox for learning, and the documentation of that learning.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: sethdehaan
+github_username:  sethxd
+
+# Build settings
+markdown: kramdown
+highlighter: rouge

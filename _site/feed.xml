@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>seth.blog</title>
+    <description>This blog is a sandbox for learning, and the documentation of that learning.
+</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 04 Oct 2015 13:35:05 -0400</pubDate>
+    <lastBuildDate>Sun, 04 Oct 2015 13:35:05 -0400</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>fumbling with jekyll</title>
+        <description>&lt;p&gt;So this is where it begins.&lt;/p&gt;
+
+&lt;p&gt;As part of my convoluted, self-taught, web design training labyrinth, I’ve decided to fool around with a blog built on &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;&lt;strong&gt;jekyll&lt;/strong&gt;&lt;/a&gt;. I’ve never really touched &lt;a href=&quot;http://whatismarkdown.com&quot;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt; before either, so this is a two birds, one stone opportunity.&lt;/p&gt;
+
+&lt;p&gt;I’m using &lt;a href=&quot;http://www.atom.io&quot;&gt;Github’s Atom editor&lt;/a&gt; and a nifty little plug-in called markdown-writer to edit posts. Admittedly, pretty much all I’ve done so far is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Get jekyll up and running.&lt;/li&gt;
+  &lt;li&gt;Poke around in the styles.&lt;/li&gt;
+  &lt;li&gt;Optimize my Atom environment for jekyll/mardown editing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\opensans_editing.png&quot; alt=&quot;changing my blog font to open sans&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Right now, I’m really looking forward to digging into the layout design and building a blog all my own. And hosting it on Github pages, which I haven’t looked into yet. Of course, if you’re reading this, I’ve already successfully done that…&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Oct 2015 11:22:52 -0400</pubDate>
+        <link>http://yourdomain.com/introduction/jekyll/2015/10/01/fumbling-with-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/introduction/jekyll/2015/10/01/fumbling-with-jekyll.html</guid>
+        
+        
+        <category>introduction</category>
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>

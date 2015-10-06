@@ -15,7 +15,7 @@ body {
 }
 
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 
@@ -75,4 +75,10 @@ th {
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
+}
+
+.center {
+  text-align:center;
+  margin:0 auto;
+  display:block;
 }

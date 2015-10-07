@@ -2,8 +2,7 @@
 layout: post
 title: fumbling with jekyll
 date: 2015-10-01T15:22:52.000Z
-tags:
-- self
+tags: webdev jekyll
 ---
 
 Everybody starts somewhere.

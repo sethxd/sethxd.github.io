@@ -12,6 +12,16 @@
   margin-top: 0;
   margin-bottom: 0;
   color: #505050;
+  display:inline;
+
+  a {
+    color: #505050;
+  }
+
+}
+
+#nav {
+  display:inline;
 
   a {
     color: #505050;
@@ -23,4 +33,20 @@
     color: #c0c0c0;
     letter-spacing: 0;
   }
+}
+
+@media screen and (max-width:600px) {
+
+  #nav {
+    display:block;
+    text-align:center;
+    margin-top:1rem;
+  }
+
+  .masthead {
+    text-align:center;
+    margin-bottom:1rem;
+  }
+
+
 }

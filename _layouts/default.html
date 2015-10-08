@@ -5,8 +5,13 @@
 
   <body>
 
-    <div class="container content">
-      <header class="masthead">
+    <header class="masthead">
+      <div id="videoHeader">
+        <video loop="loop" autoplay="autoplay" poster="https://static-videos.pexels.com/assets/video-header-7a40bc08c66e2fbe59c29ceda61c1ac2ab20192bf6c1dc74083daf09267e2ac6.jpg">
+          <source src="/assets/stars.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="mastheadText">
         <h3 class="masthead-title">
           <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
         </h3>
@@ -16,7 +21,10 @@
             <a href="{{ page[1] }}">{{ page[0] }}</a>
           {% endfor %}
         </nav>
-      </header>
+      </div>
+    </header>
+
+    <div class="container content">
 
       <main>
         {{ content }}

@@ -59,8 +59,13 @@
 
   <body>
 
-    <div class="container content">
-      <header class="masthead">
+    <header class="masthead">
+      <div id="videoHeader">
+        <video loop="loop" autoplay="autoplay" poster="https://static-videos.pexels.com/assets/video-header-7a40bc08c66e2fbe59c29ceda61c1ac2ab20192bf6c1dc74083daf09267e2ac6.jpg">
+          <source src="/assets/stars.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="mastheadText">
         <h3 class="masthead-title">
           <a href="/" title="Home">seth.blog</a>
         </h3>
@@ -79,7 +84,10 @@
             <a href="/atom.xml">Feed</a>
           
         </nav>
-      </header>
+      </div>
+    </header>
+
+    <div class="container content">
 
       <main>
         <div class="posts">
@@ -147,7 +155,7 @@
           <a target="_blank" href="https://www.youtube.com/channel/UCZvJ3jMBROUbnybIQ5bsdvw"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
         </div>
         <small>
-          Seth DeHaan &copy; <time datetime="2015-10-08T14:41:14-04:00">2015</time>. All rights reserved.
+          Seth DeHaan &copy; <time datetime="2015-10-08T16:07:59-04:00">2015</time>. All rights reserved.
         </small>
       </footer>
     </div>

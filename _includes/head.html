@@ -13,6 +13,17 @@
     {% endif %}
   </title>
 
+  <!-- meta info -->
+  {% if page.desc %}
+  <meta name="description" content="{{ page.desc }}" />
+  {% else %}
+  <meta name="description" content="Seth DeHaan's blog, the ramblings of an aspiring front-end designer, author, and compulsive tinkerer." />
+  {% endif %}
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}" />
+  {% else %}
+  <meta name="keywords" content="author, web design, development, video, games, jekyll, blog, atom" />
+  {% endif %}
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
@@ -42,19 +53,5 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
-
-  <!-- meta info -->
-
-  {% if page.desc %}
-    <meta name="description" content="{{ page.desc }}" />
-  {% else %}
-    <meta name="description" content="Aspiring front-end designer, author, and compulsive tinkerer." />
-  {% endif %}
-
-  {% if page.keywords %}
-    <meta name="keywords" content="{{ page.keywords }}" />
-  {% else %}
-    <meta name="keywords" content="author, web design, development, video, games, jekyll, blog, atom" />
-  {% endif %}
 
 </head>

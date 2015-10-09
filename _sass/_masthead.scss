@@ -44,6 +44,11 @@
 
   video {
     width:100%;
+    background:transparent url('/assets/night_sky.jpeg') no-repeat 0 0; 
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+   -o-background-size:cover;
+   background-size:cover;
   }
 }
 

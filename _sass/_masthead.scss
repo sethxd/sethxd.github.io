@@ -62,6 +62,10 @@
   }
 }
 
+video::-webkit-media-controls {
+    display:none !important;
+}
+
 @media screen and (max-width:600px) {
 
   #nav {
@@ -74,14 +78,5 @@
     text-align:center;
     margin-bottom:1rem;
   }
-
-  .masthead-title a, #nav a, #nav small {
-    color: #333 !important;
-  }
-
-  video {
-    display:none;
-  }
-
 
 }

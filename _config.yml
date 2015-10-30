@@ -9,6 +9,9 @@ title:               seth.blog
 tagline:             rambling and rambling
 paginate:            5
 baseurl:             ""
+gems:                [jekyll-paginate]
+markdown:            kramdown
+highlighter:         pygments
 
 # Assets
 #

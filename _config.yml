@@ -15,24 +15,24 @@ highlighter:         pygments
 
 # Prose.io configuration
 prose:
-    media: "assets"
-    siteurl: "http://www.seth-dehaan.com"
-    metadata:
-    	_posts:
-        	- name: "layout"
-              field:
-              	element: "hidden"
-                value: "post"
-        	- name: "description"
-              field:
-              	label: "meta-description"
-              	element: "text"
-                value: "meta-description"
-            - name: "tags"
-              field:
-              	label: "tags"
-                element: "text"
-                value: "tags"
+  media: "assets"
+  siteurl: "http://www.seth-dehaan.com"
+  metadata:
+    _posts:
+      - name: "layout"
+      field:
+        element: "hidden"
+        value: "post"
+      - name: "description"
+      field:
+        label: "meta-description"
+        element: "text"
+        value: "meta-description"
+      - name: "tags"
+      field:
+        label: "tags"
+        element: "text"
+        value: "tags"
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.

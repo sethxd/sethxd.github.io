@@ -23,6 +23,11 @@ prose:
         field:
           element: "hidden"
           value: "post"
+      - name: "title"
+        field:
+          label: "title"
+          element: "text"
+          value: "insert title here"
       - name: "description"
         field:
           label: "meta-description"

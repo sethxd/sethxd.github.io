@@ -2,7 +2,7 @@
 layout: post
 desc: Prose.io is a fantastic tool for updating Jekyll blogs hosted on Github Pages.
 tags: webdev jekyll
-published: false
+published: true
 title: "workflow update - prose.io"
 ---
 

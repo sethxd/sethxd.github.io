@@ -1,10 +1,12 @@
 ---
+date: "2015-11-03 10:52 -0500"
 layout: post
 desc: Prose.io is a fantastic tool for updating Jekyll blogs hosted on Github Pages.
 tags: webdev jekyll
 published: true
 title: "workflow update - prose.io"
 ---
+
 
 After finding a new tool, I'm testing a change to my blog posting workflow.
 
@@ -62,4 +64,3 @@ Those lines do a few things:
 - Define metadata options for new posts.
 
 There's even a live preview option to see how it will look on your site (thought it doesn't seem to work with code highlighting). My first impressions of Prose.io are almost entirely positive, and I know it'll be nice to be able to update this blog from anywhere.
-

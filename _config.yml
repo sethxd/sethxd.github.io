@@ -28,7 +28,7 @@ prose:
           label: "title"
           element: "text"
           value: "insert title here"
-      - name: "description"
+      - name: "desc"
         field:
           label: "meta-description"
           element: "text"

@@ -33,6 +33,11 @@ prose:
           label: "tags"
           element: "text"
           value: "tags"
+      - name: "title"
+      	field:
+          label: "title"
+          element: "text"
+          value: "insert title here"
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.

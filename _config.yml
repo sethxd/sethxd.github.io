@@ -15,8 +15,8 @@ highlighter:         pygments
 
 # Prose.io configuration
 prose:
-	siteurl: "http://www.seth-dehaan.com"
     media: "assets"
+    siteurl: "http://www.seth-dehaan.com"
     metadata:
     	_posts:
         	- name: "layout"

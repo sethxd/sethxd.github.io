@@ -43,6 +43,10 @@ prose:
           label: "title"
           element: "text"
           value: "insert title here"
+      - name: "date"
+        field:
+          element: "hidden"
+          value: CURRENT_DATETIME
 
 # Assets
 #

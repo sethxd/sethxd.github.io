@@ -1,10 +1,12 @@
 ---
+date: "2015-10-30 14:27"
 layout: post
-title: 'freecodecamp bonfire: javascript calculator'
-date: '2015-10-30 14:27'
+title: "freecodecamp zipline: javascript calculator"
 desc: Building a calculator with Javascript as part of the freecodecamp instructional course.
 tags: webdev freecodecamp
+published: true
 ---
+
 
 So I started going through [freeCodeCamp's](www.freecodecamp.com) online courses a few months ago, but my progress has been pretty stop-n-go. I blazed through all the basic HTML & CSS courses, and all the beginner JavaScript & jQuery was all stuff I've seen before too. Once you make it through those, freeCodeCamp throws these projects they call 'ziplines' at you, which are much more involved, full assignments without specific instructions.
 

@@ -2,7 +2,7 @@
 date: "2015-11-04 13:38 -0500"
 desc: Some of my solutions for freeCodeCamp JavaScript algorithm bonfires explained.
 tags: webdev freecodecamp
-published: false
+published: true
 title: "freecodecamp bonfires: sum all fibonacci & primes"
 ---
 

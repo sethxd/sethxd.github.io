@@ -17,7 +17,7 @@ Oh man, this one was a doozy. Here's the assignment:
 
 Sounds easy, right? It pretty difficult for me to wrap my head around, but I actually got this one **almost** on my first try. See my solution below with explanations of each step in the comments.
 
-<% highlight js %>
+{% highlight js %}
 function smallestCommons(arr) {
   
   // Define two arrays to get the full sequence for both numbers in the array
@@ -82,6 +82,6 @@ function smallestCommons(arr) {
   
   return counter;
 }
-<% endhighlight %>
+{% endhighlight %}
 
 Like the last few bonfires I've worked on, I get done this one, I look at the code and I think to myself: "There's got to be a simpler way to do this." I'm going to make it a habit to look for solutions other people have found after I finish eash bonfire, and I hope these posts serve that purpose for others too.

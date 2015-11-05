@@ -24,7 +24,7 @@
 }
 
 #mastheadText {
-  max-width:38rem;
+  max-width:50rem;
   z-index:1;
   padding-left:  1.5rem;
   padding-right: 1.5rem;
@@ -44,7 +44,7 @@
 
   video {
     width:100%;
-    background:transparent url('/assets/night_sky.jpeg') no-repeat 0 0; 
+    background:transparent url('/assets/night_sky.jpeg') no-repeat 0 0;
    -webkit-background-size:cover;
    -moz-background-size:cover;
    -o-background-size:cover;

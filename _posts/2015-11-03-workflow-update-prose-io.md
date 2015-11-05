@@ -25,7 +25,7 @@ Prose syncs up with your Github account and offers an online Markdown editor for
 
 So far it's great. I like the integrated Markdown editing tools, and it even supports drag-and-drop for uploading images. It's very easy to get started, only requiring some additional lines to your `_config.yml` file. Here's what mine looks like:
 
-{% highlight yaml %}
+{% highlight yaml linenos %}
 # Prose configuration
 prose:
   media: "assets"

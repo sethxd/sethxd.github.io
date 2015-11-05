@@ -11,7 +11,7 @@ To help myself work through these algorithm solutions in my head (and provide so
 
 ##Sum all Odd Fibonacci Numbers
 
-{% highlight js %}
+{% highlight js linenos %}
 function sumFibs(num) {
   // First define the three key variables
   var prevNumber = 0;
@@ -41,7 +41,7 @@ I had some trouble with this one and wasted a lot of time trying to make a `for`
 
 ##Sum All Primes
 
-{% highlight js %}
+{% highlight js linenos %}
 function sumPrimes(num) {
   // Declare an array to place all the primes in, and a variable for the total
   var primes = [];

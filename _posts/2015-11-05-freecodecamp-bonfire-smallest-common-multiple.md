@@ -17,7 +17,7 @@ Oh man, this one was a doozy. Here's the assignment:
 
 Sounds easy, right? It pretty difficult for me to wrap my head around, but I actually got this one **almost** on my first try. See my solution below with explanations of each step in the comments.
 
-{% highlight js %}
+{% highlight js linenos %}
 function smallestCommons(arr) {
   
   // Define two arrays to get the full sequence for both numbers in the array

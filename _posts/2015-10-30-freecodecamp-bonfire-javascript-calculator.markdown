@@ -18,7 +18,7 @@ The latest assignment I've worked on required me to build a calculator with Java
 
 The first thing I did was build the structure of a calculator with Bootstrap button styling.
 
-{% highlight html %}
+{% highlight html linenos %}
 <div class="row">
     <div class="col-xs-3 btn btn-default reset">AC</div>
     <div class="col-xs-3 btn btn-default reset">CE</div>
@@ -49,7 +49,7 @@ I ended up piling pretty much everything into one click function, because all my
 
 First, I wanted to set up the reset buttons to totally clear all numbers and operations, so I set up an if statement to run the `reset()` function if the button has the `reset` class:
 
-{% highlight javascript %}
+{% highlight js linenos %}
 var reset = function() {
   currentTotal = "0";
   number1 = 0;
@@ -60,7 +60,7 @@ var reset = function() {
 
 My second if statement determines if the button clicked was a number:
 
-{% highlight javascript %}
+{% highlight js linenos %}
 if ($(this).hasClass('number')) {
     if (currentTotal !== "0") {
       var temp = $(this).text();
@@ -79,7 +79,7 @@ If the button has the `number` class, I check to see if the current number displ
 
 If the button wasn't a number, it's got to be an operator. So my next if statement determines, if it's an operator, which one it is:
 
-{% highlight javascript %}
+{% highlight js linenos %}
 else if ($(this).hasClass('operator')) {
     if ($(this).hasClass('divide')) {
       number1 = parseInt(currentTotal);
@@ -115,7 +115,7 @@ When a user clicks one of these operator buttons, a few things happen:
 
 After that, the user is free to input the second number of their operation. Once they do that, and press the equals button, **magic happens**.
 
-{% highlight javascript %}
+{% highlight js linenos %}
 else if ($(this).hasClass('equals')) {
       switch (operator) {
         case "divide":

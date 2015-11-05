@@ -1,5 +1,6 @@
 ---
 date: "2015-11-05 09:10 -0500"
+layout: post
 desc: "A freeCodeCamp assignment to find the smallest common multiple that can be evenly divided by two numbers, along with all numbers in their sequence."
 tags: webdev freecodecamp
 published: true

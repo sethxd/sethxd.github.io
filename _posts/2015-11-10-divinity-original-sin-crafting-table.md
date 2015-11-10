@@ -3,7 +3,7 @@ date: "2015-11-10 09:21 -0500"
 layout: post
 desc: "How I put together a comprehensive table of crafting recipes for Divinity Original Sin: Enhanced Edition."
 tags: games divinity webdev
-published: false
+published: true
 title: divinity original sin crafting table
 ---
 

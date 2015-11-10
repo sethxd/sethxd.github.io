@@ -4,7 +4,7 @@ layout: post
 desc: "How I put together a comprehensive table of crafting recipes for Divinity Original Sin: Enhanced Edition."
 tags: games divinity webdev
 published: true
-title: divinity original sin crafting table
+title: "divinity original sin crafting table"
 ---
 
 The Enhanced Edition of [Divinity: Original Sin](http://www.divinityoriginalsin.com/) released on PS4 a few weeks ago, and I've been having a blast with it. You can do almost anything with very few restrictions:

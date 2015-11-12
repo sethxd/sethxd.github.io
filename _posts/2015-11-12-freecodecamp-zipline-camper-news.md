@@ -3,9 +3,10 @@ date: "2015-11-12 13:05 -0500"
 layout: post
 desc: "A \"camper news\" page built with flexbox, CSS animation, and API calls for a freeCodeCamp challenge."
 tags: webdev freecodecamp
-published: false
+published: true
 title: "freecodecamp zipline: camper news"
 ---
+
 
 My latest project for freeCodeCamp is a stylized "camper news" page, using their latest news API to display the latest stories and meet the following requirements:
 

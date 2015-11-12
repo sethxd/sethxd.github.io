@@ -58,7 +58,11 @@ $(document).ready(function() {
       html += "<img width='200px' class='img-responsive' src='" + obj.author.picture + "'>";
       
       // This is what will show on hover: upvotes with heart icon & discuss button
-      html += "<div class='caption'><span class='hearts'>" + obj.upVotes.length + "</span>&nbsp;&nbsp;<i class='fa fa-heart fa-2x'></i><br><br><a target='_blank' href='http://www.freecodecamp.com/news/" + obj.storyLink + "'><button class='btn btn-default'>DISCUSS</button></a></div></div>";
+      html += "<div class='caption'><span class='hearts'>" +
+      obj.upVotes.length + "</span>&nbsp;&nbsp;<i class='fa fa-heart fa-2x'>
+      </i><br><br><a target='_blank' href='http://www.freecodecamp.com/news/" +
+      obj.storyLink + "'><button class='btn btn-default'>DISCUSS</button></a>
+      </div></div>";
       
       // Convert the date to readable format and include it
       var date = new Date(obj.timePosted).toUTCString().slice(0, -13);
@@ -67,8 +71,15 @@ $(document).ready(function() {
       // Separate div for trimmed headline and author credit
       html += "<div class='metadata'>";
       var headline = obj.headline.substr(0, 23) + "...";
-      html += "<span class='headline'><a title='" + obj.headline + "' target='_blank' href='" + obj.link + "'>" + headline + "</a></span>";
-      html += "<br><span class='author'>by: <a target='blank' href='https://www.freecodecamp.com/" + obj.author.username + "'>" + obj.author.username + "</a></span>";
+      
+      html += "<span class='headline'>
+      <a title='" + obj.headline + "' target='_blank' href='" +
+      obj.link + "'>" + headline + "</a></span>";
+      
+      html += "<br><span class='author'>by: <a target='blank'
+      href='https://www.freecodecamp.com/" + obj.author.username +
+      "'>" + obj.author.username + "</a></span>";
+      
       html += "</div></div>";
       
     });

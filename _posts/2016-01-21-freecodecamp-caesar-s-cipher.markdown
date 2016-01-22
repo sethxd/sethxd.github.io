@@ -25,7 +25,7 @@ Thankfully, each of the letters in the alphabet has an [ASCII character code](ht
 
 So let's say the character I'm trying to decipher is A, with a code of 65. I would add 13 to it and get a code of 78, which is N. Easy, right? Just add 13 to the code for each character.
 
-Except let's say you have P, with a character code of 80. Add 13 to that and you have 93, which is a `]` apparently. Hmmm. So if you're looking at any of the characters from the first half of the alphabet, you have to add 13 to their code. If they're from the second half of the alphabet, you have to subtract 13.
+Except let's say you have P, with a character code of 80. Add 13 to that and you have 93, which is a `]` apparently. Hmmm. So if you're looking at any of the characters from the first half of the alphabet, you have to add 13 to their code. If they're from the second half of the alphabet, you have to subtract 13
 
 {% gfycat UniformRareHyena %}
 

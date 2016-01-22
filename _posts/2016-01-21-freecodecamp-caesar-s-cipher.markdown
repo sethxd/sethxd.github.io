@@ -27,6 +27,8 @@ So let's say the character I'm trying to decipher is A, with a code of 65. I wou
 
 Except let's say you have P, with a character code of 80. Add 13 to that and you have 93, which is a `]` apparently. Hmmm. So if you're looking at any of the characters from the first half of the alphabet, you have to add 13 to their code. If they're from the second half of the alphabet, you have to subtract 13.
 
+{% gfycat UniformRareHyena %}
+
 Okay, I think we're ready to put this thing together! First things first, we're going to create a new array to put our translated characters into:
 
 {% highlight js linenos %}

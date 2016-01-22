@@ -1,0 +1,15 @@
+language: ruby
+sudo: false
+branches:
+  only:
+  - source
+rvm:
+- 2.1.5
+install:
+- gem install --no-rdoc --no-ri bundler jekyll rake
+script:
+- rake generate
+after_success:
+- rake publish
+dd:
+  secure: dI7svtg7Q9jF++MZtE+9yCoEwVBLoeG+BWPLc4ddq6kWz3g3ax9b3rVD1zqRScnhG2LCbs2Pd9rsbPB3jFQDDCJxsktOIP0sQwob0kLPV7VIRsmCZXer74PJ9KU4l0X+qfWSGs2Huxha3jU5SZ88JEXMGwEb4JJyNqOlUlJbKaxxh49K8WsW9iPPj86Er0gMKj1VVgRnYFmcFTnOqN7fQOamps0tn4QOriNkQZLkfdJ6qxbBdgmjsTgkWQnVgtz1s82h8TqPmIUJTTVt3Zw9YajeXe2+6YXiiul/JGxIzv/fkUDzqUOiRMX+lnzO/8lwsHDhLWtU4hwMbgcRoSyHuG5oV9+XNvG01GWDA2uG73FIq8mWQwOt3lFPMpKkwZqdJP73I7B443ogW7a7UMbcrkxD4l3flN3y8roZ2SdZ13dK7xqKHyIM19pX9krh6aFAt4L26BWQiTDceuh9HdtIKoYDFOWRU3Q0oWtZnENRMcHlo5Sapk2GbVTul2VbbBh/Rk1bYNCz5nEJ3LcOLZJUHd+8z76F5RhjWmAIAKh4LRL83Z2wnLr9Gv7tMOnUBfE0WNTpB6+bbo0YkZIVwa+bE1sELjtdBUOkTe99Y2fy5TuUE58QxBJUSu1VVEufA/kW9IoxbG6jRs6DViC6hGwEG+vRw/hxfwRTrnVHyDYxTW0=

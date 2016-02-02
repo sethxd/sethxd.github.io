@@ -2,16 +2,17 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               seth.blog
 tagline:             rambling and rambling
 paginate:            5
 baseurl:             ""
-gems:                [jekyll-paginate]
+gems:                [jekyll-paginate, kramdown]
 markdown:            kramdown
-highlighter:         pygments
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Prose.io configuration
 prose:

@@ -10,14 +10,18 @@ pre {
 
 code {
   padding: .25em .5em;
-  font-size: 85%;
+  font-size: 95%;
   color: #bf616a;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 3px;
 }
 
+td .code {
+  background-color:white;
+}
+
 .cp_embed_iframe {
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 
 pre {
@@ -36,9 +40,9 @@ pre code {
 .highlight {
   padding: 1rem;
   margin-bottom: 1rem;
-  font-size: .8rem;
+  font-size: .95rem;
   line-height: 1.4;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: .25rem;
 
   pre {
@@ -46,7 +50,7 @@ pre code {
     overflow-x: auto;
   }
 
-  .lineno {
+  .linenos {
     display: inline-block; // Ensures the null space also isn't selectable
     padding: 0 5px;
     border-right: 1px solid #ccc;

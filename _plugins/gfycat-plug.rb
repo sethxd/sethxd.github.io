@@ -25,14 +25,14 @@ module Jekyll
 
     def render(context)
       output = super
-      video = "<img class='gfyitem' data-controls='false' data-id='#{@videoname}'>"
+      video = "<img class='gfyitem' data-controls='true' data-id='#{@videoname}'>"
     end
 
   end
 
   class GfyCatJS < Liquid::Tag
     def render(context)
-      '<script src="http://assets.gfycat.com/js/gfyajax-0.517d.js"></script>'
+      '<script src="https://assets.gfycat.com/gfycat.js"></script>'
     end
   end
 

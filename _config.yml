@@ -2,6 +2,7 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
+url:                 http://www.seth-dehaan.com
 
 # Setup
 title:               seth.blog
@@ -61,6 +62,18 @@ author:
   name:              Seth DeHaan
   url:               https://twitter.com/sethdehaan
   email:             seth.dehaan@gmail.com
+
+# sitemap configuration
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"
 
 # Custom vars
 version:             2.0.0

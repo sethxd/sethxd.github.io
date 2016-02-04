@@ -38,8 +38,8 @@ frontMatter: """
 layout: "{layout}"
 title: "{title}"
 date: "{date}"
-desc: ""
-tags:
+desc: "Insert description here"
+tags: "insert tags here"
 ---
 """
 

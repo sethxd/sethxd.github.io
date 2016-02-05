@@ -93,6 +93,10 @@ tbody tr:nth-child(odd) th {
     margin: 0;
 }
 
+.video {
+  margin-bottom:20px;
+}
+
 .video iframe, .video object, .video embed {
     position: absolute;
     top: 0;

@@ -1,7 +1,7 @@
 ---
 date: "2015-10-30 14:27"
 layout: post
-title: "freecodecamp zipline: javascript calculator"
+title: "freeCodeCamp Zipline: Javascript Calculator"
 desc: Building a calculator with Javascript as part of the freecodecamp instructional course.
 tags: webdev freecodecamp
 published: true

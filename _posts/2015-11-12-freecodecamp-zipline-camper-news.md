@@ -4,7 +4,7 @@ layout: post
 desc: "A \"camper news\" page built with flexbox, CSS animation, and API calls for a freeCodeCamp challenge."
 tags: webdev freecodecamp
 published: true
-title: "freecodecamp zipline: camper news"
+title: "freeCodeCamp Zipline: Camper News"
 ---
 
 

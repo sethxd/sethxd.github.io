@@ -4,7 +4,7 @@ layout: post
 desc: "A freeCodeCamp assignment to find the smallest common multiple that can be evenly divided by two numbers, along with all numbers in their sequence."
 tags: webdev freecodecamp
 published: true
-title: "freecodecamp bonfire: smallest common multiple"
+title: "freeCodeCamp Bonfire: Smallest Common Multiple"
 ---
 
 Oh man, this one was a doozy. Here's the assignment:
@@ -19,67 +19,67 @@ Sounds easy, right? It pretty difficult for me to wrap my head around, but I act
 
 {% highlight js linenos %}
 function smallestCommons(arr) {
-  
+
   // Define two arrays to get the full sequence for both numbers in the array
-  
+
   var sequence1 = [];
   var sequence2 = [];
-  
+
   // I'm going to use this variable to tell this function to keep running the loop
-  
+
   var num = false;
-  
+
   // I'll use this variable as a counter to check each potential multiple
-  
+
   var counter = 1;
-  
+
   // These two for loops are building my two sequences
-  
+
   for (var i = 1; i <= arr[0]; i++) {
     sequence1.push(i);
   }
-  
+
   for (var j = 1; j <= arr[1]; j++) {
     sequence2.push(j);
   }
-  
+
   // Here's the meat of the operation, running a while loop until the answer is found
- 
+
   while (num === false) {
-    
+
     // Check to see if the current number is a multiple of both starting values
-    
+
     if (counter % arr[0] === 0 && counter % arr[1] === 0) {
-      
+
       // Divide the current number by every number in both sequences,
       // checking to see if they're evenly divisible. If they are, all
       // the values in these two new arrays will be 0
-      
+
       var check1 = sequence1.map(function(x) {
         return counter % x;
       });
-      
+
       var check2 = sequence2.map(function(x) {
         return counter % x;
       });
-      
+
       // Check to see if all values in both new arrays are 0. If they are,
       // set num = true to stop running the loop.
-      
+
       if (check1.every(elem => elem === 0) && check2.every(elem => elem === 0)) {
         num = true;
       }
-      
+
     }
-    
+
     // Increase the current number only if loop is still set to run
-    
+
     if (!num) {
       counter++;
     }
-    
+
   }
-  
+
   return counter;
 }
 {% endhighlight %}

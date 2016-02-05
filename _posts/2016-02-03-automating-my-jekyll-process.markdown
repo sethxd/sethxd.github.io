@@ -1,6 +1,6 @@
 ---
 layout: post
-title: how i automated my jekyll process (or&#58 i changed my mind, i do want plugins)
+title: How I Automated My Jekyll Process (Or&#58 I Changed My Mind, I Do Want Plugins)
 date: '2016-02-04 09:00'
 desc: 'After much trial and error, this is how I switched over to building Jekyll locally and automatically deploying.'
 tags: webdev jekyll

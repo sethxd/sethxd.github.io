@@ -4,7 +4,7 @@ layout: post
 desc: "How I put together a comprehensive table of crafting recipes for Divinity Original Sin: Enhanced Edition."
 tags: games divinity webdev
 published: true
-title: "divinity original sin crafting table"
+title: "Divinity: Original Sin - Crafting Table"
 ---
 
 The Enhanced Edition of [Divinity: Original Sin](http://www.divinityoriginalsin.com/) released on PS4 a few weeks ago, and I've been having a blast with it. You can do almost anything with very few restrictions:
@@ -31,4 +31,3 @@ I used two main tools:
 - [**bootstrap-table**](http://bootstrap-table.wenzhixin.net.cn/). Bootstrap-table adds easy formatting, sorting on all columns, and additional filtering options.
 
 The table itself was pretty easy to get up-and-running thanks to those two utilities, but the task of cleaning up data is more time-consuming. I'm still working on verifying the accuracy of all the recipes and consolidating everything to cut down on the noise. But it's a fun project, I'm using it myself, and I've gotten some great feedback from the community on reddit too.
-

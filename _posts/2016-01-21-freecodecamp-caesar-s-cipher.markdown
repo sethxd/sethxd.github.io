@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "freecodecamp: caesar's cipher"
+title: "freeCodeCamp: Caesar's Cipher"
 date: '2016-01-21 15:58'
 desc: "How to build a ROT13 cipher translator with javascript"
 tags: webdev freecodecamp

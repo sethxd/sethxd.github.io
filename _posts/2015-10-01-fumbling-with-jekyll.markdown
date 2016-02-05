@@ -1,6 +1,6 @@
 ---
 layout: post
-title: fumbling with jekyll
+title: Fumbling with Jekyll
 date: 2015-10-01T15:22:52.000Z
 desc: 'The start of my learning experience with Jekyll, the static site generator.'
 tags: webdev jekyll

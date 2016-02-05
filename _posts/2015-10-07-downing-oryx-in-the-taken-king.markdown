@@ -1,6 +1,6 @@
 ---
 layout: post
-title: downing oryx in the taken king
+title: Downing Oryx in The Taken King
 date: '2015-10-07 10:28'
 desc: 'The king is dead! Long live the Taken king!'
 tags: destiny games

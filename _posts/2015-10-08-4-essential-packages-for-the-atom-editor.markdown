@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 4 essential packages for atom
+title: 4 Essential Packages for Atom
 date: '2015-10-08 14:39'
 desc: A few of the packages available for the Atom editor I use all the time.
 tags: webdev atom

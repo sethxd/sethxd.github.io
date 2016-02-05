@@ -92,4 +92,14 @@ video::-webkit-media-controls {
     margin-bottom:1rem;
   }
 
+  // slightly change display of code blocks on mobile
+
+  .highlight {
+    margin: 20px 0;
+  }
+
+  .gutter {
+    display:none;
+  }
+
 }

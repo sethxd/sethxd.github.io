@@ -14,19 +14,23 @@ code {
   color: #bf616a;
   background-color: #fff;
   border-radius: 3px;
+  max-width:100%;
 }
 
 .code {
   background-color:#fff !important;
+  max-width:100%;
 }
 
 .cp_embed_iframe {
   margin-bottom:10px;
+  max-width:100%;
 }
 
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
+  max-width:100%;
 }
 
 pre code {
@@ -34,6 +38,7 @@ pre code {
   font-size: 100%;
   color: inherit;
   background-color: transparent;
+  max-width:100%;
 }
 
 // so that the line numbers are not selectable
@@ -61,6 +66,12 @@ pre code {
   pre.lineno {
     border: none;
     @include opacity(0.6);
+
+  }
+
+  pre {
+    margin-bottom: 0;
+    overflow-x: auto;
   }
 
   .lineno {
@@ -76,6 +87,7 @@ pre code {
     pre {
       border: none;
       margin-bottom: 0px;
+      max-width:100%;
     }
   }
 }

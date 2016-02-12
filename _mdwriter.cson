@@ -57,7 +57,6 @@ publishKeepFileExtname: false
 inlineNewLineContinuation: false
 
 # path to a .cson file that stores links added for automatic linking
-siteLinkPath: path.join(atom.getConfigDirPath(), "#{@prefix}-links.cson")
 
 # TextStyles and LineStyles
 #

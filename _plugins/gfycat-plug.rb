@@ -25,7 +25,7 @@ module Jekyll
 
     def render(context)
       output = super
-      video = "<img class='gfyitem' data-controls='true' data-id='#{@videoname}'>"
+      video = "<img class='gfyitem' data-controls='false' data-id='#{@videoname}'>"
     end
 
   end

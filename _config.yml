@@ -9,7 +9,7 @@ title:               seth.blog
 tagline:             rambling and rambling
 paginate:            5
 baseurl:             ""
-gems:                [jekyll-paginate, kramdown]
+gems:                [jekyll-paginate, kramdown, jekyll-gist]
 markdown:            kramdown
 kramdown:
   input: GFM

@@ -12,6 +12,7 @@ module Jekyll
 
     def render(context)
       path, title, alt = @text.split(',').map(&:strip)
+      %{<a class="fancybox" href="/assets/#{path}"><img class="center-image" src="/assets/#{path}" alt="#{alt || title}" /></a>}
     end
   end
 end

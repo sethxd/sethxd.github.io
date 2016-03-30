@@ -12,7 +12,6 @@ module Jekyll
 
     def render(context)
       path, title, alt = @text.split(',').map(&:strip)
-      %{<a href="/assets/images/#{path}" rel="lightbox" title="#{title}"><img class="center-image" src="/assets/images/#{path}" alt="#{alt || title}" /></a>}
     end
   end
 end

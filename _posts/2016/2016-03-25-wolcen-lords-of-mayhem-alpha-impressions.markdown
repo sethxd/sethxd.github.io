@@ -21,7 +21,7 @@ From what I've seen, you unlock new skills by picking up and using skill books t
 - **Multi-Fireball**. Launch 3 fireballs at once.
 - **Explosive Wave**. A ground pound that launches enemies out from your character in a straight line.
 
-![Wolcen Skill Leveling](/assets/wolcen-skill-screen.jpg){: .center-image }
+{% lightbox wolcen-skill-screen.jpg, Leveling up Skills in Wolcen %}
 
 So far, all these skills feel good and look better. The spell effects are impressive, and I think Wolcen will be a visual stunner once it's further along. I also noticed skills level up as you use them, much like in Path of Exile, and with each level you can upgrade either their power or utility. In my play time so far I haven't noticed it make a huge difference, but it's hard to tell how much of the system has been implemented.
 
@@ -33,7 +33,7 @@ I definitely noticed this using my chain lightning on enemies standing in pools 
 
 ## Character Builds
 
-[![Leveled Up in Wolcen](/assets/wolcen-leveled-up.jpg)](/assets/wolcen-leveled-up.jpg){: .center-image }
+![Leveled Up in Wolcen](/assets/wolcen-leveled-up.jpg){: .center-image }
 
 It's a little early to say much about character builds, but here's what I've noticed so far:
 

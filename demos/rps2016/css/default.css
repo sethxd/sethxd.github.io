@@ -153,8 +153,8 @@ body {
 
 /* RSVP FORM */
 
-.rsvp, .rsvp iframe {
-  min-height:1000px;;
+.rsvp {
+  min-height:200px;;
 }
 
 /* FOOTER */
@@ -221,8 +221,8 @@ footer {
     width: 100vw;
     margin-left: -15px;
   }
-  .rsvp, .rsvp iframe {
-    min-height:1100px;;
+  .rsvp {
+    min-height:200px;;
   }
 }
 

@@ -6,6 +6,10 @@ title: Projects
 
 #### My Wedding
 
+[![Mel and Seth wedding website](../assets/wedding-site-screen.jpg)](/demos/melandseth)
+
+I built a wedding website for my fiance Mel and me! Instead of sending out detailed invitations and RSVP cards, we decided to put all the information we needed online (along with all our most elegant, sophisticated photos) and linked guests to a Google form so they could easily RSVP. Clcik the screenshot above to check it out.
+
 #### GLSC Event Landing Pages
 
 [![2016 landing page](../assets/rps2016-screen.png)](/demos/rps2016)
@@ -16,7 +20,7 @@ title: Projects
 
 <p style="text-align:center"><a href="/demos/rps2015">2015 Landing Page Demo</a></p>
 
-During my time at GLSC, I built an event landing page each year for our annual summit. I tried something new each time, and for the last design dropped our Constant Contact integration and instead enabled registration through an embedded Google form.
+During my time at GLSC, I built an event landing page each year for our annual summit. I tried something new each time, and for the last design dropped our Constant Contact integration and instead enabled registration through an embedded Google form. Click the links above to check them out.
 
 #### [Divinity: Original Sin Enhanced Edition Crafting Table](http://seth-dehaan.com/divinity_crafting)
 

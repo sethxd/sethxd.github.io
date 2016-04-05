@@ -2,12 +2,36 @@
 layout: page
 title: Projects
 ---
-### freeCodeCamp Projects
+<h3 class="projects-head">Development</h3>
+
+#### My Wedding
+
+#### GLSC Event Landing Pages
+
+[![2016 landing page](../assets/rps2016-screen.png)](/demos/rps2016)
+
+<p style="text-align:center"><a href="/demos/rps2016">2016 Landing Page Demo</a></p>
+
+[![2015 landing page](../assets/rps2015-screen.jpg)](/demos/rps2015)
+
+<p style="text-align:center"><a href="/demos/rps2015">2015 Landing Page Demo</a></p>
+
+During my time at GLSC, I built an event landing page each year for our annual summit. I tried something new each time, and for the last design dropped our Constant Contact integration and instead enabled registration through an embedded Google form.
+
+#### [Divinity: Original Sin Enhanced Edition Crafting Table](http://seth-dehaan.com/divinity_crafting)
+
+{% lightbox div-crafting-screen.png, Divinity crafting list screenshot %}
+
+I put together this table when I was playing this game. The crafting system is complex but almost totally opaque, and I wanted a resource I could quickly search for combinations and recipes. I styled the table and made it sortable with **bootstrap-table**, then added a search bar for filtering with **Jets.js**.
+
+#### Miscellaneous
+
+- [hain-plugin-reddit](https://github.com/sethxd/hain-plugin-reddit)
+- [hain-plugin-stocks](https://github.com/sethxd/hain-plugin-stocks)
+
+<h3 class="projects-head">freeCodeCamp</h3>
 
 The freeCodeCamp curriculum requires you to complete a few different projects. Some of mine I built on codepen, and I've embedded them below.
-
-<p data-height="400" data-theme-id="0" data-slug-hash="vNQPdr" data-default-tab="result" data-user="sethxd" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/sethxd/pen/vNQPdr/'>freeCodeCamp prettyNews</a> by seth dehaan (<a href='http://codepen.io/sethxd'>@sethxd</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p data-height="400" data-theme-id="0" data-slug-hash="LpYrRJ" data-default-tab="result" data-user="sethxd" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/sethxd/pen/LpYrRJ/'>pomodoro clock</a> by seth dehaan (<a href='http://codepen.io/sethxd'>@sethxd</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
@@ -15,13 +39,7 @@ The freeCodeCamp curriculum requires you to complete a few different projects. S
 <p data-height="400" data-theme-id="0" data-slug-hash="qOLMeg" data-default-tab="result" data-user="sethxd" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/sethxd/pen/qOLMeg/'>fCC - wikipedia search</a> by seth dehaan (<a href='http://codepen.io/sethxd'>@sethxd</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-### Coding
-
-[Divinity: Original Sin Enhanced Edition Crafting Table](http://seth-dehaan.com/divinity_crafting)
-
-I put together this table when I was playing this game. The crafting system is complex but almost totally opaque, and I wanted a resource I could quickly search for combinations and recipes. I styled the table and made it sortable with bootstrap-table, then added a search bar for filtering with Jets.js.
-
-### Fiction
+<h3 class="projects-head">Fiction</h3>
 
 Published 6.4.2012: [Too Careful](http://dailysciencefiction.com/science-fiction/aliens/seth-dehaan/too-careful)
 

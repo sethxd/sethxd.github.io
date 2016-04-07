@@ -8,7 +8,7 @@ published: true
 ---
 
 
-So I started going through [freeCodeCamp's](www.freecodecamp.com) online courses a few months ago, but my progress has been pretty stop-n-go. I blazed through all the basic HTML & CSS courses, and all the beginner JavaScript & jQuery was all stuff I've seen before too. Once you make it through those, freeCodeCamp throws these projects they call 'ziplines' at you, which are much more involved, full assignments without specific instructions.
+So I started going through [freeCodeCamp's](http://www.freecodecamp.com) online courses a few months ago, but my progress has been pretty stop-n-go. I blazed through all the basic HTML & CSS courses, and all the beginner JavaScript & jQuery was all stuff I've seen before too. Once you make it through those, freeCodeCamp throws these projects they call 'ziplines' at you, which are much more involved, full assignments without specific instructions.
 
 The ones I've done so far have been challenging, and I went through them more than a month ago before I started this blog. So, coming back to freeCodeCamp, I thought it would help me to document my work and spell out my thought process on here.
 

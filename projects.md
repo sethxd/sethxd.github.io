@@ -22,6 +22,12 @@ I built a wedding website for my fiance Mel and me! Instead of sending out detai
 
 During my time at GLSC, I built an event landing page each year for our annual summit. I tried something new each time, and for the last design dropped our Constant Contact integration and instead enabled registration through an embedded Google form. Click the links above to check them out.
 
+#### [Image Comics Release Tracker](http://seth-dehaan.com/image-release-tracker)
+
+{% lightbox image-tracker-screen.jpg, Image comics release tracker screenshot %}
+
+I stopped buying single issue comics, so I wanted an easy way to know when trade paperbacks for my favorite series were coming out. I couldn't find a service that did exactly what I wanted, so I used [WrapAPI](https://wrapapi.com/) to create an API from Image's upcoming releases page. Then I built an app to let the user pick a date and show them all the comics coming out that week, with an option to only view collected editions.
+
 #### [Divinity: Original Sin Enhanced Edition Crafting Table](http://seth-dehaan.com/divinity_crafting)
 
 {% lightbox div-crafting-screen.png, Divinity crafting list screenshot %}

@@ -37,10 +37,13 @@ I put together this table when I was playing this game. The crafting system is c
 
 The freeCodeCamp curriculum requires you to complete a few different projects. Some of mine I built on codepen, and I've embedded them below.
 
-<p data-height="400" data-theme-id="0" data-slug-hash="LpYrRJ" data-default-tab="result" data-user="sethxd" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/sethxd/pen/LpYrRJ/'>pomodoro clock</a> by seth dehaan (<a href='http://codepen.io/sethxd'>@sethxd</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="314" data-theme-id="dark" data-slug-hash="rxeddq" data-default-tab="js,result" data-user="sethxd" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/sethxd/pen/rxeddq/">fCC - Simon Game</a> by seth dehaan (<a href="http://codepen.io/sethxd">@sethxd</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p data-height="400" data-theme-id="0" data-slug-hash="qOLMeg" data-default-tab="result" data-user="sethxd" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/sethxd/pen/qOLMeg/'>fCC - wikipedia search</a> by seth dehaan (<a href='http://codepen.io/sethxd'>@sethxd</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="540" data-theme-id="dark" data-slug-hash="LpYrRJ" data-default-tab="js,result" data-user="sethxd" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/sethxd/pen/LpYrRJ/">pomodoro clock</a> by seth dehaan (<a href="http://codepen.io/sethxd">@sethxd</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p data-height="310" data-theme-id="dark" data-slug-hash="qOLMeg" data-default-tab="js,result" data-user="sethxd" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/sethxd/pen/qOLMeg/">fCC - wikipedia search</a> by seth dehaan (<a href="http://codepen.io/sethxd">@sethxd</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <h3 class="projects-head">Fiction</h3>

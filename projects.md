@@ -8,7 +8,7 @@ title: Projects
 
 [![Mel and Seth wedding website](../assets/wedding-site-screen.jpg)](/demos/melandseth)
 
-I built a wedding website for my fiance Mel and me! Instead of sending out detailed invitations and RSVP cards, we decided to put all the information we needed online (along with all our most elegant, sophisticated photos) and linked guests to a Google form so they could easily RSVP. Clcik the screenshot above to check it out.
+I built a wedding website for my fiance Mel and me! Instead of sending out detailed invitations and RSVP cards, we decided to put all the information we needed online (along with all our most elegant, sophisticated photos) and linked guests to a Google form so they could easily RSVP. Click the screenshot above to check it out.
 
 #### GLSC Event Landing Pages
 

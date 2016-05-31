@@ -3,7 +3,7 @@ layout: "post"
 title: "Adding Pinterest to Your Hubspot Blog's Social Sharing Bar"
 date: "2016-03-15 10:36"
 desc: "Your Hubspot blog's social sharing module doesn't include Pinterest, but here's how to add it."
-tags: "webdev hubspot"
+tags: "webdev hubspot tutorial"
 ---
 
 We started using [Hubspot](http://www.hubspot.com) at my work a few months ago for marketing campaigns, landing pages, and as a blogging platform. It's pretty intuitive, and I've been able to dig into the guts as we require changes to the layout. One example: Hubspot's current social sharing module for the blog doesn't include Pinterest.

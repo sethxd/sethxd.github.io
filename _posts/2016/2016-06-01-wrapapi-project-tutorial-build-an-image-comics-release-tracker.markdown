@@ -6,9 +6,9 @@ desc: "An intro to using WrapAPI to build a tracker displaying Image comics rele
 tags: "webdev tutorial"
 ---
 
-**Required skills:** Intermediate HTML and JS
-
 With the right API, you can build an app to solve almost any problem. But what if there's no API available? [WrapAPI](http://www.wrapapi.com) allows you to make your own, and in this tutorial I'll walk you through the first project I built with it.
+
+**Required skills:** Intermediate HTML and JS
 
 A few months ago, I had to make a difficult decision: buy more long boxes, or stop buying single issue comics. If you're a comics fan, you know the struggle. For me, especially considering I'll be moving out of state in a few week, it made a lot more sense to cut the cord and stop buying single issues (apologies to all my favorite writers).
 
@@ -20,17 +20,17 @@ With WrapAPI, you can define forms or data on a website and capture those elemen
 
 To start building the API, install the WrapAPI Chrome extension, which adds a tab to dev tools. Load the page, open dev tools, and click over to the WrapAPI tab. Log into WrapAPI, click **Start capturing requests**, and reload the page to see this screen:
 
-![WrapAPI initial load](/images/2016/05/wrapapi-intro.png)
+![WrapAPI initial load](/assets/wrapapi-intro.png){: .center-image }
 
 The selection we want is the plain HTML data, so click the URL and then click **Save to API endpoint**.
 
 Now, log into your account on WrapAPI, and the next step is to define those inputs in the URL for year and month under the **Inputs and request** tab as shown below:
 
-![wrapapi input fields](/images/2016/05/wrapapi-inputs.png)
+![wrapapi input fields](/assets/wrapapi-inputs.png){: .center-image }
 
 By defining these inputs, you're building an API that can check upcoming releases for any month in any year. Not half bad! The next step is to test those inputs, so click over to the **Outputs and response** tab to add a test case. Let's see if we can pull up releases for June, 2016 using the following test inputs:
 
-![wrapapi test case](/images/2016/05/wrapapi-testcase.png)
+![wrapapi test case](/assets/wrapapi-testcase.png){: .center-image }
 
 This should return a 200 response and show a preview of the full page. Save this test case and return to the main page. Now the fun begins! This is the info for each comic we want to capture from the page:
 
@@ -46,13 +46,13 @@ WrapAPI offers a few different ways to extract data from a page, but we're going
 
 If you've used the dev tools inspector, WrapAPI's selector tool will be familiar. We'll start by identifying where the comic titles appear. Click a title in the preview window and you should see something like this:
 
-![WrapAPI using CSS selector](/images/2016/06/wrapapi-titlegrab.png)
+![WrapAPI using CSS selector](/assets/wrapapi-titlegrab.png){: .center-image }
 
 The element you originally clicked is highlighted in green, and all similar elements are highlighted in yellow. If elements are highlighted that don't match, click them to refine the selection. In the image above, you can see the comic title is displayed as the anchor text of a link inside a paragraph with the class `book__headline`.
 
 You can use a few other options to further refine your selection:
 
-![wrapapi options](/images/2016/06/wrapapi-options.png)
+![wrapapi options](/assets/wrapapi-options.png){: .center-image }
 
 For this project, make sure to check **Select all into an array**, so you get data for all the comics on the page. You also choose to grab the plain text or attributes from an element. For example, for the URL of the comic's page you'll want to select the `href` attribute from the title's link.
 
@@ -194,7 +194,8 @@ At this point, the bones of the app should be functional. We just need to dress 
 		transition:all 0.15s ease-in-out;
 }
 
-/* The caption contains all the data, and is invisible until the user hovers over the tile */ /*
+/* The caption contains all the data, and is invisible until the user
+hovers over the tile */
 
 .caption p {
   height:50%;

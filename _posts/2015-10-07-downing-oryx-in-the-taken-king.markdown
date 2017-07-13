@@ -6,7 +6,7 @@ desc: 'The king is dead! Long live the Taken king!'
 tags: destiny games
 ---
 
-Here's a little side track to test embedding Youtube clips with markdown... and shameless higlighting of my jumping skills.
+Here's a little side track to test embedding Youtube clips with markdown... and shameless highlighting of my jumping skills.
 
 {% youtube uWXEvLHsE_s %}
 

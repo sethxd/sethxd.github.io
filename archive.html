@@ -8,6 +8,7 @@ Search: <input type="search" id="archive-search">
 
 <ul class="archive-list">
   {% for post in site.posts %}
+    <li><span style="display:inline-block;width:130px;font-weight:700">{{ post.date | date_to_string }}:</span><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></li>
   {% endfor %}
 </ul>
 

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Updated Image Comics Release Tracker : seth.blog
+    
+  </title>
+
+  <!-- meta info -->
+  
+  <meta name="description" content="I built an Image comics release tracker last year, recently made some updates." />
+  
+  
+  <meta name="keywords" content="seth dehaan, author, web design, development, video, games, jekyll, blog, atom" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- fontawesome icons & open sans & jets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/hover.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="/jquery.fancybox.min.css" media="screen" />
+  <script src="/jets.min.js"></script>
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#333333">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="seth.blog" href="/atom.xml">
+
+</head>
+
+
+  <body>
+
+    <header class="masthead">
+      <div id="videoHeader">
+        <video loop="loop" autoplay="autoplay" poster="/assets/night_sky.jpeg">
+          <source src="/assets/stars.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="mastheadText">
+        <h1 class="masthead-title">
+          <a class="hvr-grow" href="/" title="Home">seth.blog</a>
+        </h1>
+        <nav id="nav">
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/about">About</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/archive">Archive</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/projects">Projects</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/atom.xml">Feed</a>
+          
+        </nav>
+      </div>
+    </header>
+
+    <div class="container content">
+
+      <main>
+        <article class="post">
+  <ul class="index-data">
+    <li><time datetime="2017-10-02T14:05:00-05:00" class="post-date">02 Oct 2017</time></li>
+    <li> : <a href="/tags/#webdev">webdev</a></li>
+  </ul>
+  <h1 class="post-title">Updated Image Comics Release Tracker</h1>
+
+  <p>Last year I built a release tracker for Image comics. Last week I noticed it was busted, and in the process of fixing it I decided to make some upgrades.</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>I broke it with a pretty basic mistake. I set up the date picker wrong so it was only looking at the first digit for the month, which was fine January - September, but as soon as we hit October it got borked. That was a pretty easy fix.</p>
+
+<p>When I got back into it, I remember I had originally wanted to add some kind of filtering, so instead of just looking at a wall of comic covers users could highlight their favorite writers. Over the course of a few hours I figured out how to do this, but it does feel a little janky. I’m positive there’s a much easier way to do this, but that optimization is somewhere down the road.</p>
+
+<h2 id="adding-filtering-by-author">Adding Filtering by Author</h2>
+
+<p>To start, I just had to pull a list of all the writers for the selected week. This is already part of the data I’m pulling, so it was easy to throw them in an array.</p>
+
+<p>There were two things I needed to do with this array:</p>
+
+<ul>
+  <li>Remove duplicates (some writers might have multiple books in a given week)</li>
+  <li>Alphabetize by last name</li>
+</ul>
+
+<p>I found a handy shortcut for removing duplicates:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nx">writerList</span> <span class="o">=</span> <span class="nx">writerList</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="o">===</span> <span class="nx">i</span><span class="p">);</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>And this function works to look at the last name of each writer and sort by that:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">writerSort</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">splitA</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">splitB</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">lastA</span> <span class="o">=</span> <span class="nx">splitA</span><span class="p">[</span><span class="nx">splitA</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="kd">var</span> <span class="nx">lastB</span> <span class="o">=</span> <span class="nx">splitB</span><span class="p">[</span><span class="nx">splitB</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">lastA</span> <span class="o">&lt;</span> <span class="nx">lastB</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">lastA</span> <span class="o">&gt;</span> <span class="nx">lastB</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Great, so now our list of authors is sorted and all duplicates are removed.</p>
+
+<p>To get this list on the page, I looped through the array, spitting each name out as a list item with their last name as a data attribute:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nx">writerList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">);</span>
+        <span class="nx">writerhtml</span> <span class="o">+=</span> <span class="s1">'&lt;li class="wlink" data-name="'</span> <span class="o">+</span> <span class="nx">name</span><span class="p">[</span><span class="nx">name</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">x</span> <span class="o">+</span> <span class="s1">'&lt;/li&gt;'</span><span class="p">;</span>
+      <span class="p">});</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I also went back through the main loop and added the author’s last name as a class to each comic’s div.</p>
+
+<p>With the correct classes and corresponding data attributes in place, this function does all the filtering:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".wlink"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">"active"</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'.faded'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">"faded"</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">"active"</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'.faded'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">"faded"</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'.active'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">"active"</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"data-name"</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">fullFilter</span> <span class="o">=</span> <span class="s2">".flex-item:not(."</span> <span class="o">+</span> <span class="nx">filter</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">;</span>
+            <span class="nx">$</span><span class="p">(</span><span class="nx">fullFilter</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">"faded"</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">"active"</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">})</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This function does the following things if the user clicks an author’s name that is not currently active:</p>
+
+<ul>
+  <li>Reset filtering for all items</li>
+  <li>Reset active status</li>
+  <li>Create a variable to target all items that do not have the selected writer’s class</li>
+  <li>Add the <strong>faded</strong> class to those items</li>
+  <li>Add the <strong>active</strong> class to the clicked link</li>
+</ul>
+
+<p>If the user clicks a writer’s name that is already active:</p>
+
+<ul>
+  <li>Remove the <strong>faded</strong> class from all items.</li>
+  <li>Remove the <strong>active</strong> class from the clicked link.</li>
+</ul>
+
+<p>It’s not the cleanest way to do it, but it works! I’ve been testing it out myself, and it feels much quicker to parse the data and find the comics I’m really interested in. <a href="http://www.seth-dehaan.com/image-release-tracker">Click here to try it out for yourself.</a></p>
+
+<h2 id="further-improvements">Further Improvements</h2>
+
+<p>After making these changes, I find myself thinking about other ways I could improve this tool. Additional filtering options, like by artist? Generate a printer-friendly list of all title and relevant info? Buttons to quickly move to the next or previous weeks.</p>
+
+<p>If you get some use out of this tool, or have any suggestions for improvements, leave a comment and let me know!</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sethxd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<br />
+
+      </main>
+
+      <footer class="footer">
+        <div class="social">
+          <a class="hvr-grow" target="_blank" href="http://www.github.com/sethxd"><i class="fa fa-github fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="http://twitter.com/sethdehaan"><i class="fa fa-twitter fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" href="mailto:seth.dehaan@gmail.com"><i class="fa fa-envelope-o fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="https://www.youtube.com/channel/UCZvJ3jMBROUbnybIQ5bsdvw"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
+        </div>
+        <small>
+          Seth DeHaan &copy; <span>2018</span>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68510434-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script type"text/javascript" src="https://assets.gfycat.com/gfycat.js"></script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+
+  </body>
+</html>

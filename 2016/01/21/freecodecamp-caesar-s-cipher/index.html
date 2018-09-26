@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      freeCodeCamp: Caesar's Cipher : seth.blog
+    
+  </title>
+
+  <!-- meta info -->
+  
+  <meta name="description" content="How to build a ROT13 cipher translator with javascript" />
+  
+  
+  <meta name="keywords" content="seth dehaan, author, web design, development, video, games, jekyll, blog, atom" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- fontawesome icons & open sans & jets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/hover.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="/jquery.fancybox.min.css" media="screen" />
+  <script src="/jets.min.js"></script>
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#333333">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="seth.blog" href="/atom.xml">
+
+</head>
+
+
+  <body>
+
+    <header class="masthead">
+      <div id="videoHeader">
+        <video loop="loop" autoplay="autoplay" poster="/assets/night_sky.jpeg">
+          <source src="/assets/stars.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="mastheadText">
+        <h1 class="masthead-title">
+          <a class="hvr-grow" href="/" title="Home">seth.blog</a>
+        </h1>
+        <nav id="nav">
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/about">About</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/archive">Archive</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/projects">Projects</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/atom.xml">Feed</a>
+          
+        </nav>
+      </div>
+    </header>
+
+    <div class="container content">
+
+      <main>
+        <article class="post">
+  <ul class="index-data">
+    <li><time datetime="2016-01-21T15:58:00-06:00" class="post-date">21 Jan 2016</time></li>
+    <li> : <a href="/tags/#webdev">webdev</a>, <a href="/tags/#freecodecamp">freecodecamp</a></li>
+  </ul>
+  <h1 class="post-title">freeCodeCamp: Caesar's Cipher</h1>
+
+  <p>My next freeCodeCamp challenge involves building a Javascript for the <a href="https://en.wikipedia.org/wiki/ROT13">ROT13 cipher</a>. With the ROT13 cipher, a letter is replaced by the one 13 spaces away from it in the alphabet.</p>
+
+<p>Here’s a visual breakdown of how it works:</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ROT13_table_with_example.svg/320px-ROT13_table_with_example.svg.png" alt="ROT13 diagram" class="center-image" /></p>
+
+<p>So what’s the best way to do this? Well, you could brute force it by running a collection of IF statements on each character: <code class="highlighter-rouge">if (str.charAt(i) == "A")...</code> But that would require like, 26 different IF statements. No thanks!</p>
+
+<p>Thankfully, each of the letters in the alphabet has an <a href="http://www.asciitable.com/">ASCII character code</a>. Capitalized and uncapitalized letters actually have different codes, but for this challenge we’re only dealing with capital letters, starting with A (65) and running through Z (90). To illustrate, I added character codes to a ROT13 table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">65</th>
+      <th style="text-align: center">66</th>
+      <th style="text-align: center">67</th>
+      <th style="text-align: center">68</th>
+      <th style="text-align: center">69</th>
+      <th style="text-align: center">70</th>
+      <th style="text-align: center">71</th>
+      <th style="text-align: center">72</th>
+      <th style="text-align: center">73</th>
+      <th style="text-align: center">74</th>
+      <th style="text-align: center">75</th>
+      <th style="text-align: center">76</th>
+      <th style="text-align: center">77</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">A</td>
+      <td style="text-align: center">B</td>
+      <td style="text-align: center">C</td>
+      <td style="text-align: center">D</td>
+      <td style="text-align: center">E</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">G</td>
+      <td style="text-align: center">H</td>
+      <td style="text-align: center">I</td>
+      <td style="text-align: center">J</td>
+      <td style="text-align: center">K</td>
+      <td style="text-align: center">L</td>
+      <td style="text-align: center">M</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">N</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">P</td>
+      <td style="text-align: center">Q</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">U</td>
+      <td style="text-align: center">V</td>
+      <td style="text-align: center">W</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">Y</td>
+      <td style="text-align: center">Z</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">78</td>
+      <td style="text-align: center">79</td>
+      <td style="text-align: center">80</td>
+      <td style="text-align: center">81</td>
+      <td style="text-align: center">82</td>
+      <td style="text-align: center">83</td>
+      <td style="text-align: center">84</td>
+      <td style="text-align: center">85</td>
+      <td style="text-align: center">86</td>
+      <td style="text-align: center">87</td>
+      <td style="text-align: center">88</td>
+      <td style="text-align: center">89</td>
+      <td style="text-align: center">90</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So let’s say the character I’m trying to decipher is A, with a code of 65. I would add 13 to it and get a code of 78, which is N. Easy, right? Just add 13 to the code for each character.</p>
+
+<p>Except let’s say you have P, with a character code of 80. Add 13 to that and you have 93, which is a <code class="highlighter-rouge">]</code> apparently. Hmmm. So if you’re looking at any of the characters from the first half of the alphabet, you have to add 13 to their code. If they’re from the second half of the alphabet, you have to subtract 13</p>
+
+<p>Okay, I think we’re ready to put this thing together! First things first, we’re going to create a new array to put our translated characters into:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">rot13</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newString</span> <span class="o">=</span> <span class="p">[];</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>To decipher messages, we’re going to look at each character in a message using a <code class="highlighter-rouge">for</code> loop, like this: <code class="highlighter-rouge">for (var i = 0; i &lt; str.length; i++)</code>. For our <code class="highlighter-rouge">if, else</code> options, each character will fall into one of three categories:</p>
+
+<ol>
+  <li>A non-alphanumeric character (spaces, punctuation)</li>
+  <li>A capital letter A - M</li>
+  <li>A capital letter N - Z</li>
+</ol>
+
+<p>First, we’ll determine if the character is not alphanumeric. If it is, we’ll leave it as is in the coded message. So if it’s a space, it’ll stay a space. If it’s an exclamation point, it’ll stay an exclamation point.</p>
+
+<p>We know the only codes we’re really interested in are those for capital letters, so from 65 - 90. That means any character with code less than 65, or greater than 90, we can safely ignore. This first <code class="highlighter-rouge">if</code> statement accomplishes that:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">65</span> <span class="o">||</span> <span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+    <span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>For our next <code class="highlighter-rouge">if</code> statement, we’ll identify all characters from the second half of the alphabet, so anything with a code greater than 77. When we find one of these letters, we’ll subtract 13 from the character code, identify the letter for this new code, and push it to our array:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">77</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">13</span><span class="p">));</span>
+    <span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>For our final <code class="highlighter-rouge">else</code> statement, we know the only options left will be characters with a code from 65 - 77, so letters from the first half of the alphabet. For these we’ll do the same thing as the last step, but adding 13 to the character code instead:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">else</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">));</span>
+    <span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>With all the translated characters from the original message pushed to our new array, all we have to do is join them and return the result: <code class="highlighter-rouge">return newString.join("")</code>. Here’s what the final, completed function looks like:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">rot13</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newString</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">65</span> <span class="o">||</span> <span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">77</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">13</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">newString</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">13</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">newString</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This was fun to build, and got me thinking about what other ciphers could be translated using functions. It’s kind of like having a digital decoder ring.</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sethxd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<br />
+
+      </main>
+
+      <footer class="footer">
+        <div class="social">
+          <a class="hvr-grow" target="_blank" href="http://www.github.com/sethxd"><i class="fa fa-github fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="http://twitter.com/sethdehaan"><i class="fa fa-twitter fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" href="mailto:seth.dehaan@gmail.com"><i class="fa fa-envelope-o fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="https://www.youtube.com/channel/UCZvJ3jMBROUbnybIQ5bsdvw"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
+        </div>
+        <small>
+          Seth DeHaan &copy; <span>2018</span>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68510434-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script type"text/javascript" src="https://assets.gfycat.com/gfycat.js"></script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+
+  </body>
+</html>

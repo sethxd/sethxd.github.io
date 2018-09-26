@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Adding Pinterest to Your Hubspot Blog's Social Sharing Bar : seth.blog
+    
+  </title>
+
+  <!-- meta info -->
+  
+  <meta name="description" content="Your Hubspot blog's social sharing module doesn't include Pinterest, but here's how to add it." />
+  
+  
+  <meta name="keywords" content="seth dehaan, author, web design, development, video, games, jekyll, blog, atom" />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- fontawesome icons & open sans & jets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/hover.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="/jquery.fancybox.min.css" media="screen" />
+  <script src="/jets.min.js"></script>
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#333333">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="seth.blog" href="/atom.xml">
+
+</head>
+
+
+  <body>
+
+    <header class="masthead">
+      <div id="videoHeader">
+        <video loop="loop" autoplay="autoplay" poster="/assets/night_sky.jpeg">
+          <source src="/assets/stars.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div id="mastheadText">
+        <h1 class="masthead-title">
+          <a class="hvr-grow" href="/" title="Home">seth.blog</a>
+        </h1>
+        <nav id="nav">
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/about">About</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/archive">Archive</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/projects">Projects</a>
+          
+            &nbsp;&nbsp;&nbsp;
+            <a href="/atom.xml">Feed</a>
+          
+        </nav>
+      </div>
+    </header>
+
+    <div class="container content">
+
+      <main>
+        <article class="post">
+  <ul class="index-data">
+    <li><time datetime="2016-03-15T10:36:00-05:00" class="post-date">15 Mar 2016</time></li>
+    <li> : <a href="/tags/#webdev">webdev</a>, <a href="/tags/#hubspot">hubspot</a>, <a href="/tags/#tutorial">tutorial</a></li>
+  </ul>
+  <h1 class="post-title">Adding Pinterest to Your Hubspot Blog's Social Sharing Bar</h1>
+
+  <p>We started using <a href="http://www.hubspot.com">Hubspot</a> at my work a few months ago for marketing campaigns, landing pages, and as a blogging platform. It’s pretty intuitive, and I’ve been able to dig into the guts as we require changes to the layout. One example: Hubspot’s current social sharing module for the blog doesn’t include Pinterest.</p>
+
+<p>Originally, our blog post template was set up to include this <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl">HubL</a> (Hubspot’s templating language) tag just below the title:</p>
+
+<p><code class="highlighter-rouge">{% blog_social_sharing "blog_social_sharing" overrideable=False, label='Blog Social Sharing' %}</code></p>
+
+<p>Hubspot’s <code class="highlighter-rouge">blog_social_sharing</code> module spits out a row of social media icons with counters, just like this:</p>
+
+<p><img src="/assets/hs-social-sharing-default.png" alt="Hubspot" class="center-image" /></p>
+
+<p>Looks just fine. But we wanted to add Pinterest. Hubspot doesn’t allow you to make changes to the global modules, but you <strong>replace the module</strong> with your own code.</p>
+
+<p>The example output HubL offers for the <code class="highlighter-rouge">blog_social_sharing</code> module is pretty straightforward:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="code"><pre><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"hs_cos_wrapper_blog_social_sharing"</span>
+<span class="na">class=</span><span class="s">"hs_cos_wrapper hs_cos_wrapper_widget
+hs_cos_wrapper_type_blog_social_sharing"</span>
+<span class="na">style=</span><span class="s">""</span> <span class="na">data-hs-cos-general-type=</span><span class="s">"widget"</span>
+<span class="na">data-hs-cos-type=</span><span class="s">"blog_social_sharing"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hs-blog-social-share"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-list"</span><span class="nt">&gt;</span>
+
+               <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+               hs-blog-social-share-item-twitter"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://twitter.com/share"</span>
+                     <span class="na">class=</span><span class="s">"twitter-share-button"</span>
+                     <span class="na">data-lang=</span><span class="s">"en"</span>
+                     <span class="na">data-url=</span><span class="s">"http://designers.hubspot.com/blog"</span>
+                     <span class="na">data-size=</span><span class="s">"medium"</span>
+                     <span class="na">data-text=</span><span class="s">""</span><span class="nt">&gt;</span>Tweet<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;/li&gt;</span>
+
+               <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+               hs-blog-social-share-item-linkedin"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"IN/Share"</span>
+                    <span class="na">data-url=</span><span class="s">"http://designers.hubspot.com/blog"</span>
+                    <span class="na">data-showzero=</span><span class="s">"true"</span>
+                    <span class="na">data-counter=</span><span class="s">"right"</span><span class="nt">&gt;&lt;/script&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+                hs-blog-social-share-item-facebook"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"fb-like"</span>
+                     <span class="na">data-href=</span><span class="s">"http://designers.hubspot.com/blog"</span>
+                     <span class="na">data-layout=</span><span class="s">"button_count"</span> <span class="na">data-action=</span><span class="s">"like"</span>
+                     <span class="na">data-show-faces=</span><span class="s">"false"</span> <span class="na">data-share=</span><span class="s">"true"</span>
+                     <span class="na">data-width=</span><span class="s">"120"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+                hs-blog-social-share-item-google-plus"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g-plusone"</span> <span class="na">data-size=</span><span class="s">"medium"</span>
+                      <span class="na">data-href=</span><span class="s">"http://designers.hubspot.com/blog"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+          <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/span&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>With this as a starting point, it should be pretty easy to add a pinterest button in line with the others. But first things first, <strong>don’t forget to replace the example URL with the correct HubL expression.</strong> Meaning, every URL in the code above should be replaced by a HubL expression:</p>
+
+<p><code class="highlighter-rouge">{{ content.absolute_url }}</code>.</p>
+
+<p>I’ve never used Pinterest much, so I visited <a href="https://developers.pinterest.com/tools/widget-builder/">their developer page</a> to learn how to generate a “Pin it” button. The URL for a “Pin it” button takes parameters, and the three we’re concerned with are:</p>
+
+<ul>
+  <li><strong>url</strong> - the absolute url of the blog post. HubL expression: <code class="highlighter-rouge">{{ content.absolute_url }}</code></li>
+  <li><strong>description</strong> - the post title. HubL expression: <code class="highlighter-rouge">{{ page_meta.name }}</code></li>
+  <li><strong>media</strong> - the post’s featured image: <code class="highlighter-rouge">{{ content.featured_image }}</code></li>
+</ul>
+
+<p>To add a Pinterest button, I followed the format of the others built it as a list item. Check out the parameters of the link URL to see how the HubL expressions are used:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre><span class="c">&lt;!-- Same class as the other list items + custom --&gt;</span>
+
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+hs-blog-social-share-item-pinterest"</span><span class="nt">&gt;</span>
+
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pin-it"</span>
+     <span class="na">style=</span><span class="s">"display:inline-block"</span><span class="nt">&gt;</span>
+
+          <span class="c">&lt;!-- URL with HubL parameters --&gt;</span>
+
+          <span class="nt">&lt;a</span> <span class="na">data-pin-do=</span><span class="s">"buttonPin"</span>
+          <span class="na">data-pin-count=</span><span class="s">"beside"</span>
+          <span class="na">href=</span><span class="s">"//www.pinterest.com/pin/create/button/
+          ?url={{ content.absolute_url }}
+          &amp;description={{ page_meta.name }}
+          &amp;media={{ content.featured_image }}"</span><span class="nt">&gt;</span>
+
+          <span class="c">&lt;!-- "Pin it" button image --&gt;</span>
+
+          <span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"vertical-align:middle"</span>
+          <span class="na">src=</span><span class="s">"//assets.pinterest.com/images/pidgets/
+          pinit_fg_en_rect_gray_20.png"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+
+     <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>That’s all the code for the “Pin it” button. Now just insert the list item wherever you want it to show up in the order of social buttons. I placed it before Google Plus for no particular reason:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+</pre></td><td class="code"><pre><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"hs_cos_wrapper_blog_social_sharing"</span>
+<span class="na">class=</span><span class="s">"hs_cos_wrapper hs_cos_wrapper_widget
+hs_cos_wrapper_type_blog_social_sharing"</span>
+<span class="na">style=</span><span class="s">""</span> <span class="na">data-hs-cos-general-type=</span><span class="s">"widget"</span>
+<span class="na">data-hs-cos-type=</span><span class="s">"blog_social_sharing"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hs-blog-social-share"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-list"</span><span class="nt">&gt;</span>
+
+               <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+               hs-blog-social-share-item-twitter"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://twitter.com/share"</span>
+                     <span class="na">class=</span><span class="s">"twitter-share-button"</span>
+                     <span class="na">data-lang=</span><span class="s">"en"</span>
+                     <span class="na">data-url=</span><span class="s">"{{ content.absolute_url }}"</span>
+                     <span class="na">data-size=</span><span class="s">"medium"</span>
+                     <span class="na">data-text=</span><span class="s">""</span><span class="nt">&gt;</span>Tweet<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;/li&gt;</span>
+
+               <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+               hs-blog-social-share-item-linkedin"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"IN/Share"</span>
+                    <span class="na">data-url=</span><span class="s">"{{ content.absolute_url }}"</span>
+                    <span class="na">data-showzero=</span><span class="s">"true"</span>
+                    <span class="na">data-counter=</span><span class="s">"right"</span><span class="nt">&gt;&lt;/script&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+                hs-blog-social-share-item-facebook"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"fb-like"</span>
+                     <span class="na">data-href=</span><span class="s">"{{ content.absolute_url }}"</span>
+                     <span class="na">data-layout=</span><span class="s">"button_count"</span> <span class="na">data-action=</span><span class="s">"like"</span>
+                     <span class="na">data-show-faces=</span><span class="s">"false"</span> <span class="na">data-share=</span><span class="s">"true"</span>
+                     <span class="na">data-width=</span><span class="s">"120"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+                hs-blog-social-share-item-pinterest"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pin-it"</span>
+                     <span class="na">style=</span><span class="s">"display:inline-block"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">data-pin-do=</span><span class="s">"buttonPin"</span>
+                          <span class="na">data-pin-count=</span><span class="s">"beside"</span>
+                          <span class="na">href=</span><span class="s">"//www.pinterest.com/pin/create/button/
+                          ?url={{ content.absolute_url }}
+                          &amp;description={{ page_meta.name }}
+                          &amp;media={{ content.featured_image }}"</span><span class="nt">&gt;</span>
+
+                          <span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"vertical-align:middle"</span>
+                          <span class="na">src=</span><span class="s">"//assets.pinterest.com/images/pidgets/
+                          pinit_fg_en_rect_gray_20.png"</span> <span class="nt">/&gt;</span>
+                          <span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"hs-blog-social-share-item
+                hs-blog-social-share-item-google-plus"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g-plusone"</span> <span class="na">data-size=</span><span class="s">"medium"</span>
+                      <span class="na">data-href=</span><span class="s">"{{ content.absolute_url }}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+
+          <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/span&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Now just insert this HTML directly into your Hubspot blog post template.</p>
+
+<p>Almost done, <strong>but the last step is crucial!</strong></p>
+
+<p>The “Pin it” button requires a little bit of Javascript to work correctly: <code class="highlighter-rouge">&lt;script async defer src="//assets.pinterest.com/js/pinit.js"&gt;&lt;/script&gt;</code>. You can add this to the <code class="highlighter-rouge">&lt;head&gt;</code> of your blog post template, just click <strong>Edit</strong> in the design manager, then <strong>Edit Head</strong>. You’ll see an input box toward the bottom of the modal where you can insert the code, like this:</p>
+
+<p><img src="/assets/hs-pinit-js-head.png" alt="Pin it button Javascript" class="center-image" /></p>
+
+<p>Once you do that, your new row of social sharing buttons should look just like this:</p>
+
+<p><img src="/assets/hs-social-pinterest-added.png" alt="New row of social sharing buttons with Pinterest added" class="center-image" /></p>
+
+<p>Give me a shout if you found this helpful, or have any trouble getting it to work. Let me know if you find any better ways to implement it too.</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'sethxd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<br />
+
+      </main>
+
+      <footer class="footer">
+        <div class="social">
+          <a class="hvr-grow" target="_blank" href="http://www.github.com/sethxd"><i class="fa fa-github fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="http://twitter.com/sethdehaan"><i class="fa fa-twitter fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" href="mailto:seth.dehaan@gmail.com"><i class="fa fa-envelope-o fa-2x fa-fw"></i></a>
+          <a class="hvr-grow" target="_blank" href="https://www.youtube.com/channel/UCZvJ3jMBROUbnybIQ5bsdvw"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
+        </div>
+        <small>
+          Seth DeHaan &copy; <span>2018</span>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68510434-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script type"text/javascript" src="https://assets.gfycat.com/gfycat.js"></script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,316 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900);
+
+body {
+	min-height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 900;
+	font-size: 3em;
+	margin-top:0;
+	margin-bottom:0.3em;
+}
+
+h2 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+	margin-top:0;
+	margin-bottom:0.2em;
+}
+
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.rps-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.slick-slider {
+	-webkit-user-select: auto;
+}
+
+.wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.slide {
+	height: 100%;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+}
+
+.number1 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.2), rgba(0,0,0,.7)), url(img/grandrapids.jpg);
+
+}
+
+.number2 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.7)), url(img/workshop.jpg);
+}
+
+.number3 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.2),rgba(0,0,0,.4)), url(img/thebob.jpg);
+}
+
+.number4 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.4)), url(img/lake.jpg);
+}
+
+.number5 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.2),rgba(0,0,0,.6)), url(img/banners.jpg);
+}
+
+.number6 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.2),rgba(0,0,0,.5)), url(img/learning.jpg);
+}
+
+.number7 {
+	background-image:linear-gradient(to right, rgba(0,0,0,.2),rgba(0,0,0,.7)), url(img/marriott2.jpg);
+}
+
+.number8 {
+	background-image:linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0)), url(img/logo.jpg);
+}
+
+.number8 a {
+	text-decoration:none;
+}
+
+.site-wrapper {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.slick-track {
+	height: 100%;
+}
+
+.slick-list {
+	height: 100%;
+}
+
+.content {
+	position: absolute;
+	font-size:1.1em;
+	width: 40%;
+	padding: 15px;
+	top: 15%;
+	right: 8%;
+	/** background-color: rgba(0,0,0,.5); **/
+	color: #fff;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:400;
+	text-align:right;
+}
+
+.content p {
+	text-align:right;
+	margin:0;
+}
+
+
+/** DOTS NAVIGATION **/
+
+.slick-dots {
+	bottom: -15px;
+	/** background: rgba(0,0,0,.5); **/
+	padding:10px 0;
+}
+
+.slick-dots li {
+	margin: 0 15px;
+	width:50px;
+	height:50px;
+	opacity: .5;
+}
+
+.slick-dots li.slick-active, .slick-dots li:hover {
+	opacity: 1;
+}
+
+.slick-dots li button {
+	width: 50px;
+	height:50px;
+	opacity: 0;
+	-webkit-filter: opacity(0.1);
+	filter: opacity(0.1);
+}
+
+.slick-prev {
+	left: 25px;
+	width:40px;
+	height:40px;
+}
+
+.slick-prev:before {
+	font-size:40px;
+}
+
+.slick-next {
+	right: 25px;
+	width:40px;
+	height:40px;
+}
+
+.slick-next:before {
+	font-size:40px;
+}
+
+.logo {
+	position:absolute;
+	background-image: url('img/glsc_white_sm.png');
+	background-repeat: no-repeat;
+	width:100px;
+	height:30px;
+	bottom:5px;
+	right:5px;
+	opacity:.5;
+}
+
+.logo:hover {
+	opacity:1;
+}
+
+.rsvp {
+	position:absolute;
+	text-align:right;
+	background-image: url('img/rsvp.png');
+	background-repeat: no-repeat;
+	width:50px;
+	height:50px;
+	bottom: 30px;
+	right: 30px;
+	opacity:.5;
+}
+
+.rsvp:hover {
+	opacity:1;
+}
+
+.swipenote {
+	position: absolute;
+	display: none;
+	bottom: 0px;
+	color: #fff;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:700;
+	text-align:center;
+	width:100%;
+	font-size: 1.5em;
+}
+
+@media screen and (max-width:1300px) {
+	.number8 {
+		background-image:linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0)), url(img/logo_med.jpg);
+		background-position:left;
+	}
+}
+
+@media screen and (max-width:768px) {
+	ul.slick-dots {
+		width: 0px !important;
+		left:-100px;
+		bottom:-15px;
+	}
+
+	h1 {
+		font-size:2em;
+		margin-bottom:.1em;
+	}
+
+	h2 {
+		font-size:1.2em;
+		margin-bottom:.1em;
+	}
+
+	.content {
+		font-size:1em;
+	}
+
+	.logo {
+		display:none;
+	}
+
+	.slick-next {
+		display:none !important;
+	}
+
+	.slick-prev {
+		display:none !important;
+	}
+
+	.content {
+		width: 95%;
+		top: 0;
+		text-align:center;
+		right:0px;
+		padding:5px;
+	}
+
+	.content p {
+		text-align:center;
+	}
+
+	.slide {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left;
+	width: 100%;
+	}
+
+	.swipenote {
+		display: block;
+	}
+
+	.number1 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.3), rgba(0,0,0,.3)), url(img/grandrapids_sm.jpg);
+
+	}
+
+	.number2 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.5)), url(img/workshop_sm.jpg);
+	}
+
+	.number3 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.5)), url(img/thebob_sm.jpg);
+	}
+
+	.number4 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.5),rgba(0,0,0,.5)), url(img/lake_sm.jpg);
+	}
+
+	.number5 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.5),rgba(0,0,0,.5)), url(img/banners_sm.jpg);
+	}
+
+	.number6 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.6)), url(img/learning_sm.jpg);
+	}
+
+	.number7 {
+		background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,.6)), url(img/marriott2_sm.jpg);
+	}
+
+	.number8 {
+		background-image:linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0)), url(img/logo_sm.jpg);
+		background-position:center;
+	}
+}

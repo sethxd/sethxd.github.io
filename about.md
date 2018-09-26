@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-!["it's almost too much attractive"](\assets\about_pic.png)
+![the whole family](\assets\new-about-pic.jpg)
 
 This blog is built on [Jekyll](https://jekyllrb.com) using the [Poole](http://getpoole.com) theme. I am a person built on bones using the coffee theme.
 
